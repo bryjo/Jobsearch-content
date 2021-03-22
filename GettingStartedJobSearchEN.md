@@ -108,6 +108,7 @@ Unsuccessful queries will have a response code of:
 ## Use cases 
 To help you find your way forward, here are some example of use cases:
 
+* [Getting ads that are furter down than 100 in the result set](#Using-offset-and-limit)
 * [Searching using Wildcard](#Searching-using-Wildcard)
 * [Phrase search](#Phrase-search)
 * [Searching for a particular job title](#Searching-for-a-particular-job-title)
@@ -120,9 +121,17 @@ To help you find your way forward, here are some example of use cases:
 * [Getting all the jobs since date and time](#Getting-all-the-jobs-since-date-and-time)
 * [Simple freetext search](#Simple-freetext-search)
 
+#### Using offset and limit
+There is a default number of ads in the result set that's set to 10. This can be increased up to a maximum of 100. From there on ads that have been given a higher number will have to be fetched using the offset parameter. So in this case i want to fetch ads 100-200 for a freetext search for python.
+
+Request URL 
+
+	https://jobsearch.api.jobtechdev.se/search?offset=100&limit=100
+
+
 
 #### Searching using Wildcard
-For some terms the easiest way to find everything you want is through a wildcard search. An example from a user requesting this kind of search was for museum jobs where both searches for "museum" and the various job titles starting with "musei" would be  relevant hits which the information structure currently dont merge very well. From version 1.8.0
+For some terms the easiest way to find everything you want is through a wildcard search. An example from a user requesting this kind of search was for museum jobs where both searches for "museum" and the various job titles starting with "musei" would be relevant hits which the information structure currently dont merge very well with. From version 1.8.0
 
 Request URL
 	
