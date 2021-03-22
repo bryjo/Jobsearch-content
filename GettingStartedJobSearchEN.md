@@ -108,7 +108,7 @@ Unsuccessful queries will have a response code of:
 ## Use cases 
 To help you find your way forward, here are some example of use cases:
 
-* [Getting ads that are furter down than 100 in the result set](#Using-offset-and-limit)
+* [Getting ads that are further down than 100 in the result set](#Using-offset-and-limit)
 * [Searching using Wildcard](#Searching-using-Wildcard)
 * [Phrase search](#Phrase-search)
 * [Searching for a particular job title](#Searching-for-a-particular-job-title)
