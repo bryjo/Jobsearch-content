@@ -326,11 +326,25 @@ application_details	ApplicationDetails(…) object|
 |region_code	string|Region code| lanskod |Region codes are codes for Swedens län. These codes  also matches legacy_id’s according to AF taxonomy[SCB use of codes for kommuner and län](https://www.scb.se/hitta-statistik/regional-statistik-och-kartor/regionala-indelningar/lan-och-kommuner/lan-och-kommuner-i-kodnummerordning/ )|
 |region_concept_id	string|taxonomy concept_id for region|lanskod|Different versions of LedigtArbete has provided different versions of id, originally legacy_id and later concept_id|
 |country	string|Country| land|Several different sources for address info exist in Ledigt Arbete - visiting address, postal address, application address as well place of work address. Ads in JobSearch will use what it finds.|
-|country_code string | | landskod|
+|country_code string | | landskod|legacy country code
 |country_concept_id	string | |taxonomy concept_id for country|
-|street_address	string | | gatuadress
-
-
+|street_address	string | | gatuadress|
+|postcode	string||postnr|
+|city	string| | postort|
+|coordinates	number| GPS coordinates |latitud longitud|These are often a central point of the municipality |
+|must_have Requirements{...} object | Requirement weighted 10 or higher by employer| krav |Requirements of types skills, languages, work_experiences|
+|skills [WeightedJobtechTaxonomyItem{...}] list of object| taxonomy concepts for skills with extra parameter “weight” in number format |kompetenser| 
+|languages	[WeightedJobtechTaxonomyItem{...}] list of objecttaxonomy |concepts for language with extra parameter “weight” in number format | sprak |
+|work_experiences	[WeightedJobtechTaxonomyItem{...}] list of objects| taxonomy concept_id for experiences with extra parameter “weight” in number format|yrkeserfarenheter|Example of a work experience WeightedJobtechTaxonomyItem object: {"varde": "i1F4_cZZ_PJu","namn": "Systemarkitekt","vikt": 10,<br>"erfarenhetsniva":     {"varde": "yrAe_Fzi_E6u","namn": "Mindre än 1 års erfarenhet"}}
+|nice_to_have	Requirements{…} object|Requirement weighted 5 or lower by employer|meriterande|Requirements of types skills, languages, work_experiences|
+|skills [WeightedJobtechTaxonomyItem{...}] list of object| taxonomy concepts for skills with extra parameter “weight” in number format |kompetenser| 
+|languages	[WeightedJobtechTaxonomyItem{...}] list of objecttaxonomy |concepts for language with extra parameter “weight” in number format | sprak |
+|work_experiences	[WeightedJobtechTaxonomyItem{...}] list of objects| taxonomy concept_id for experiences with extra parameter “weight” in number format|yrkeserfarenheter|Example of a work experience WeightedJobtechTaxonomyItem object: {"varde": "i1F4_cZZ_PJu","namn": "Systemarkitekt","vikt": 10,<br>"erfarenhetsniva":     {"varde": "yrAe_Fzi_E6u","namn": "Mindre än 1 års erfarenhet"}}|
+|publication_date	string($date-time)|Date when version of ad was published | publiceringsdatum|
+|last_publication_date	string($date-time)|When should the ad be automatically unpublished|sistaPubliceringsdatum|If the ad have the value unpublished:true the last_publication_date has no effect|
+|removedboolean |Is an ad unpublished or not|avpublicerad |
+|removed_date	string($date-time)|When was an deleted ad removed| avpubliceringsdatum| 
+|source_type string|Where was the ad created| kallaTyp|Available options: **Annonsera** AF site ad creation systems, **AIS** AF internal system (Handläggarsystem), **DXA** external systems that sends ads to AF VIA_AF_FORMULAR = gamla annonsera. På väg ut, men än så länge aktiv.VIA_AIS = nya AIS-källan. AktivVIA_PLATSBANKEN_DXA = nuvarande DXA-källan. Aktiv.VIA_PLATSBANKEN_AIS = nuvarande AIS-källan. Aktiv.VIA_PLATSBANKEN_AD = gamla annonsera direkt. Inga annonser publicerade med den källan. Finns endast gamla avpublicerade och arkiverade annonser.VIA_ANNONSERA = nya annonsera (betan). Aktiv.|
 
 
 
