@@ -344,7 +344,7 @@ application_details	ApplicationDetails(…) object|
 |last_publication_date	string($date-time)|When should the ad be automatically unpublished|sistaPubliceringsdatum|If the ad have the value unpublished:true the last_publication_date has no effect|
 |removedboolean |Is an ad unpublished or not|avpublicerad |
 |removed_date	string($date-time)|When was an deleted ad removed| avpubliceringsdatum| 
-|source_type string|Where was the ad created| kallaTyp|Available options: **Annonsera** AF site ad creation systems, **AIS** AF internal system (Handläggarsystem), **DXA** external systems that sends ads to AF VIA_AF_FORMULAR = gamla annonsera. På väg ut, men än så länge aktiv.VIA_AIS = nya AIS-källan. AktivVIA_PLATSBANKEN_DXA = nuvarande DXA-källan. Aktiv.VIA_PLATSBANKEN_AIS = nuvarande AIS-källan. Aktiv.VIA_PLATSBANKEN_AD = gamla annonsera direkt. Inga annonser publicerade med den källan. Finns endast gamla avpublicerade och arkiverade annonser.VIA_ANNONSERA = nya annonsera (betan). Aktiv.|
+|source_type string|Where was the ad created| kallaTyp|Available options: **Annonsera** AF site ad creation systems, **AIS** AF internal system (Handläggarsystem), **DXA** external systems that sends ads to AF 
 
 
 
